@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
 
-import { AppWrap , MotionWrap } from "../../Wrapper";
+import { AppWrap, MotionWrap } from "../../Wrapper";
 import { urlFor, client } from "../../client";
 import "./Work.scss";
 
@@ -21,6 +21,7 @@ const Work = () => {
     });
   }, []);
 
+  // ! When clicking on filter
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
     setAnimateCard([{ y: 100, opacity: 0 }]);
@@ -41,7 +42,7 @@ const Work = () => {
       <h2 className="head-text">
         My Creative <span>Portfolio</span> Section
       </h2>
-
+      {/* ! Filtering topics */}
       <div className="app__work-filter">
         {["UI/UX", "Web App", "Mobile App", "React JS", "All"].map(
           (item, index) => (
